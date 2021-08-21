@@ -1,30 +1,26 @@
 <?php
+$array[];
 
 function PrimoInferior($n){
-	$numeros=array();
 	if($n < 0){
 		return 0;
 	}
 	else{
-		for($x=0;$x<$n;$x++){	
+		for($x=0;$x<$n;$++){	
 			$c=0;
 			for($j=0;$j<$n;$j++){
 				if($x%($j+1)==0){
-					$c=$c+1;
+					c++;
 				}
 			}
 			if($c==2){
-				$temp=$x;
-				array_push($numeros,$temp);
-				$temp=0;
+				$array=array_push($x);
 			}
 		}
-	
+		echo $array;
 	}
-	echo $numeros[array_search(max($numeros),$numeros)];
 }
-	
-		
+
 
 echo PrimoInferior(10);
 #echo PrimoInferior(30);
