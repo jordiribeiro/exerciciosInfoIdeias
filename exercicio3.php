@@ -1,29 +1,25 @@
 <?php
-$array[];
 
-function PrimoInferior($n){
-	if($n < 0){
-		return 0;
+function PrimoInferior(){
+	/*
+		Popular Array
+	*/
+	$numeros=array();
+	$resposta=array();
+	for($x=0;$x<=20;$x++){
+		array_push($numeros,random_int(0,10));
 	}
-	else{
-		for($x=0;$x<$n;$++){	
-			$c=0;
-			for($j=0;$j<$n;$j++){
-				if($x%($j+1)==0){
-					c++;
-				}
-			}
-			if($c==2){
-				$array=array_push($x);
-			}
-		}
-		echo $array;
-	}
+	$resposta=array_count_values($numeros);
+	
+	$valfinal=array_search(max($resposta),$resposta);
+	$valfinalvezes=max($resposta);
+	
+	echo " O numero que mais se repete eh ".$valfinal."\n";
+	echo "Ele se repete ".$valfinalvezes." vezes";
 }
 
 
-echo PrimoInferior(10);
-#echo PrimoInferior(30);
+PrimoInferior();
 
 		
 		
